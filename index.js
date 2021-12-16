@@ -11,22 +11,26 @@ var rollbar = new Rollbar({
 const app = express()
 app.use(express.json())
 
+app.use('/style', express.static('./public/styles.css'))
+
 app.get('/', (req, res) => {
    res.sendFile(path.join(__dirname, '/public/index.html'))
 })
 
-app.get('/', (req, res) => {
-   try {
-      nonExistentFunction();
-    } catch (error) {
-      console.error(error);
-      // expected output: ReferenceError: nonExistentFunction is not defined
-      // Note - error messages will vary depending on browser
-    }
+// app.get('/', (req, res) => {
+//    try {
+//       nonExistentFunction();
+//     } catch (error) {
+//       console.error(error);
+//       // expected output: ReferenceError: nonExistentFunction is not defined
+//       // Note - error messages will vary depending on browser
+//     }
 
-    rollbar.log(`ReferenceError: nonExistentFunction is not defined`)
-    res.sendFile(__filename, '/nofile.html')
-})
+//    rollbar.log(`ReferenceError: nonExistentFunction is not defined`)
+//    res.sendFile(__filename, '/nofile.html')
+// })
+
+
 
 rollbar.log('Hello Wolrd')
 
