@@ -25,7 +25,7 @@ app.get('/', (req, res) => {
     }
 
     rollbar.log(`ReferenceError: nonExistentFunction is not defined`)
-    res.status(200).send(nonExistentFunction())
+    res.sendFile(__filename, '/nofile.html')
 })
 
 rollbar.log('Hello Wolrd')
