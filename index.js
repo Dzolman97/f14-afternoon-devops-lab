@@ -23,6 +23,8 @@ app.get('/', (req, res) => {
       // expected output: ReferenceError: nonExistentFunction is not defined
       // Note - error messages will vary depending on browser
     }
+
+    rollbar.log(`ReferenceError: nonExistentFunction is not defined`)
     res.status(200).send(nonExistentFunction())
 })
 
