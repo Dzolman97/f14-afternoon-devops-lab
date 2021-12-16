@@ -1,13 +1,16 @@
 .topnav {
    background-color: #43424D;
    overflow: hidden;
+   border-radius: 10px;
 }
 
 .topnav a {
    float: left;
    color: #FFF1D0;
    text-align: center;
+   padding: 14px 16px;
    text-decoration: none;
+   border-radius: 10px;
    font-size: 17px;
 }
 
@@ -20,3 +23,43 @@
    background-color: #FFF1D0;
    color: #43424D;
 }
+
+body {
+   background-color: #43424D;
+}
+
+.week {
+   display: flex;
+ }
+ 
+ .day {
+   flex-grow: 1;
+   flex-shrink: 1;
+   flex-basis: 0;
+ }
+ 
+ .week:first-of-type .day:first-of-type {
+   margin-left: 42.85714%;
+ }
+ 
+ .week:last-of-type .day:last-of-type {
+   margin-right: 14.285%;
+ }
+ 
+ .month {
+   max-width: 560px;
+   margin: 20px auto;
+ }
+ 
+ .week {
+   height: 80px;
+ }
+ 
+ .day {
+   color: #FFF1D0;
+   padding: 5px;
+   background-color: transparentize(white, 0.30);
+   box-shadow: 
+     -1px -1px #A2BCE0, 
+     inset -1px -1px 0 0 #A2BCE0;
+ }
