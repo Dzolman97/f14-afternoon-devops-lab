@@ -9,9 +9,12 @@ var rollbar = new Rollbar({
 })
 
 const app = express()
+
 app.use(express.json())
 
-app.use('/styles', express.static('./public/styles.css'))
+app.get('/styles.css', (req, res) => {
+   res.sendFile(path.join(__dirname, '/public/styles.css'))
+})
 
 app.get('/', (req, res) => {
    res.sendFile(path.join(__dirname, '/public/index.html'))
